@@ -1,0 +1,145 @@
+# GabrielPortfolio
+
+Portfólio pessoal desenvolvido com **Vite + JavaScript (Vanilla)**, focado em apresentar projetos com uma UI moderna, rápida e organizada.
+
+Este projeto foi construído com base em boas práticas de front-end, com atenção em **responsividade**, **estrutura**, **performance** e **usabilidade**.
+
+---
+
+## ✅ Stack
+
+- **Vite**
+- **JavaScript (ES Modules)**
+- **HTML/CSS**
+- SPA leve (roteamento via `history.pushState`)
+
+---
+
+## ✨ Funcionalidades implementadas
+
+### ✅ Home (Landing)
+- Hero section com CTAs (Projetos / LinkedIn / Baixar CV)
+- Layout centralizado e responsivo
+- Navegação por âncoras (Projetos / Sobre / Contato)
+
+### ✅ Projetos (cards dinâmicos)
+- Cards renderizados a partir de:
+  - `src/data/projects.js`
+- Tecnologias (tags) e destaque por categoria/nível
+- Botão de detalhes por projeto (`/projects/:id`)
+
+### ✅ Página de detalhes por projeto
+- Rota SPA: `/projects/:id`
+- Exibe:
+  - descrição
+  - tags
+  - destaques
+  - funcionalidades
+  - links Repo/Demo
+- Mídia opcional (imagem e preview de vídeo)
+
+### ✅ Sistema SPA (sem React)
+- Navegação interna interceptada e renderizada via JavaScript
+- Roteamento usando `history.pushState`
+- Suporte a voltar/avançar do navegador (`popstate`)
+- Botão "Voltar" inteligente usando histórico
+
+### ✅ Pesquisa + filtros (Projetos)
+- Campo de busca por texto (nome, descrição, tech, tags)
+- Filtro por categoria
+- Filtro por nível
+- Botão **Limpar** reseta tudo
+- Contador de resultados exibindo quantos projetos foram encontrados
+
+### ✅ Dark/Light Theme Toggle
+- Alternância de tema via botão (`#themeToggle`)
+- Persistência no `localStorage`
+- Detecta tema do sistema na primeira execução (`prefers-color-scheme`)
+- Tokens de cores via CSS variables
+
+### ✅ Responsividade e mídia
+- Miniaturas responsivas com `object-fit`
+- Ajustes de altura responsiva para telas maiores
+- Layout adaptado para mobile e desktop
+
+---
+
+## 📁 Estrutura (resumo)
+
+src/
+components/
+header.js
+footer.js
+projectCard.js
+renderProjects.js
+data/
+projects.js
+styles/
+tokens.css
+base.css
+components.css
+sections.css
+public/
+projects/
+(imagens / previews)
+
+
+---
+
+## ▶️ Rodar localmente
+
+### 1) Instalar dependências
+```bash
+npm install
+
+2) Rodar o servidor
+npm run dev
+
+
+Acesse:
+
+http://localhost:5173
+
+🛠 Próximas melhorias (roadmap)
+🔧 Arquitetura / Código
+
+Modularizar o main.js em:
+
+router.js
+
+pages/home.js
+
+pages/projectDetail.js
+
+state/theme.js
+
+state/projectsFilters.js
+
+📌 UX / UI
+
+Melhorar exibição do seletor select em modo dark (limitação do dropdown nativo do Windows)
+
+Adicionar animações suaves nos cards e transições
+
+Adicionar estado vazio (nenhum projeto encontrado)
+
+🚀 Profissionalização
+
+Deploy público (Vercel / Netlify / GitHub Pages)
+
+SEO básico:
+
+meta description
+
+OpenGraph
+
+favicon e título por rota
+
+Página de case por projeto (problema → solução → resultados)
+
+Lighthouse (Performance / Acessibilidade / SEO acima de 90)
+
+📌 Autor
+
+Gabriel Santos
+Portfólio focado em Web + Automação + Segurança
