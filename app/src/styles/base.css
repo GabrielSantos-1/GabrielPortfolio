@@ -40,3 +40,15 @@ code{
 
 .section{ margin-top: 26px; }
 .section-head{ margin-bottom: 14px; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}

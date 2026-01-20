@@ -1,15 +1,43 @@
-:root{
-  --bg: #0b0c10;
-  --panel: #12141c;
-  --panel-2: rgba(255,255,255,.06);
-  --text: rgba(255,255,255,.88);
-  --muted: rgba(255,255,255,.62);
-  --border: rgba(255,255,255,.12);
+/* ===========================
+   THEME TOKENS (Light/Dark)
+   =========================== */
 
-  --brand: #7aa6ff;
-  --brand-2: #9b7bff
+/* Padrão (se não setar nada) */
+:root {
+  --bg: #0b0d11;
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.72);
 
-  --radius: 18px;
-  --shadow: 0 10px 30px rgba(0,0,0,.35);
-  --max: 1100px;
+  --card: rgba(255, 255, 255, 0.04);
+  --card-2: rgba(255, 255, 255, 0.02);
+
+  --border: rgba(255, 255, 255, 0.10);
+  --border-2: rgba(255, 255, 255, 0.16);
+
+  --shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+
+  /* faz inputs/selects nativos ficarem escuros */
+  color-scheme: dark;
+}
+
+/* LIGHT */
+:root[data-theme="light"] {
+  --bg: #f6f7fb;
+  --text: rgba(10, 12, 18, 0.92);
+  --muted: rgba(10, 12, 18, 0.70);
+
+  --card: rgba(255, 255, 255, 0.85);
+  --card-2: rgba(255, 255, 255, 0.65);
+
+  --border: rgba(10, 12, 18, 0.12);
+  --border-2: rgba(10, 12, 18, 0.18);
+
+  --shadow: 0 18px 60px rgba(0, 0, 0, 0.12);
+
+  color-scheme: light;
+}
+
+/* DARK (explicito) */
+:root[data-theme="dark"] {
+  color-scheme: dark;
 }

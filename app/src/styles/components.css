@@ -117,3 +117,131 @@
   justify-content: space-between;
 }
 .footer-links{ display:flex; gap: 14px; }
+
+.card .thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 180px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+}
+
+.card .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* BASE (mobile/tablet): thumb padrão 16:9 e cover (bonito e compacto) */
+.thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+}
+
+/* imagem padrão */
+.thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 200ms ease;
+}
+
+/* vídeo escondido por padrão */
+.thumb-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
+
+/* hover swap */
+.card:hover .thumb-video { opacity: 1; }
+.card:hover .thumb-img { opacity: 0; }
+
+/* ✅ DESKTOP: aumenta altura e NÃO corta (contain) */
+@media (min-width: 1024px) {
+  .thumb {
+    /* em telas grandes, faz ficar mais alto */
+    aspect-ratio: unset;
+    height: clamp(220px, 22vw, 360px);
+
+    /* fundo pra ficar bonito quando usar contain */
+    background: rgba(255,255,255,0.04);
+  }
+
+  .thumb-img,
+  .thumb-video {
+    object-fit: contain; /* ✅ NÃO corta */
+    background: rgba(0,0,0,0.25); /* “molda” as barras */
+  }
+}
+
+.projects-filters{
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 12px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+
+  display: grid;
+  gap: 10px;
+}
+
+@media (min-width: 900px){
+  .projects-filters{
+    grid-template-columns: 1fr 220px 220px 120px;
+    align-items: center;
+  }
+
+  .projects-filters .input,
+  .projects-filters .select{
+    width: 100%;
+  }
+}
+
+.select{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+
+.input, .select{
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  padding: 10px 12px;
+  outline: none;
+}
+
+input::placeholder {
+  color: var(--muted);
+}
+
+.select option {
+  background: var(--card);
+  color: var(--text);
+}
+
+.input:focus, .select:focus{
+  border-color: rgba(255,255,255,0.25);
+}
